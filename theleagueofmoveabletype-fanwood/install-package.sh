@@ -1,8 +1,8 @@
 # Set variables
 set -e
 TEXLIVE=/usr/local/texlive/2014
-FOUNDRY=public
-TYPE=arvo
+FOUNDRY=theleagueofmobeabletype
+TYPE=fanwood
 NAME=$FOUNDRY-$TYPE
 
 # Check if package is available and extract package archive

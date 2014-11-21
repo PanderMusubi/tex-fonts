@@ -1,10 +1,10 @@
 # Set variables
 set -e
-FOUNDRY=gnome
-TYPE=cantarell
-NAME=$FOUNDRY-$TYPE
+NAME=cyreal-lora
 ARCHIVE=master.zip
-FONTS=https://github.com/GNOME/cantarell-fonts/archive/$ARCHIVE
+DOC=lora-promo.png
+FONTS=https://github.com/cyrealtype/Lora/archive/$ARCHIVE
+SAMPLE=http://cyreal.org/wp-content/uploads/2012/07/$DOC
 
 # Create new download and package directories
 if [ -e download ]
@@ -25,11 +25,15 @@ then
 	wget $FONTS
 fi
 unzip $ARCHIVE
-cd cantarell-fonts-master
-cp otf/*.otf ../../$NAME
-cp NEWS ../../$NAME/fontlog.txt
-cp specimen/cantarell.pdf ../../$NAME/$TYPE.pdf
-cd ..
+cd Lora-master/src/OTF
+for i in *.otf
+do
+    cp $i ../../../../$NAME/`basename $i -OTF.otf`.otf
+done
+cd ../../..
+cp Lora-master/FONTLOG.txt ../$NAME/fontlog.txt
+wget $SAMPLE
+convert $DOC -page a4 ../$NAME/$TYPE.pdf
 cd ..
 cp README.md $NAME/README
 

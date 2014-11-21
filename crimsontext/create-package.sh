@@ -1,10 +1,8 @@
 # Set variables
 set -e
-FOUNDRY=gnome
-TYPE=cantarell
-NAME=$FOUNDRY-$TYPE
+NAME=crimsontext
 ARCHIVE=master.zip
-FONTS=https://github.com/GNOME/cantarell-fonts/archive/$ARCHIVE
+FONTS=https://github.com/skosch/Crimson/archive/$ARCHIVE
 
 # Create new download and package directories
 if [ -e download ]
@@ -25,10 +23,11 @@ then
 	wget $FONTS
 fi
 unzip $ARCHIVE
-cd cantarell-fonts-master
-cp otf/*.otf ../../$NAME
-cp NEWS ../../$NAME/fontlog.txt
-cp specimen/cantarell.pdf ../../$NAME/$TYPE.pdf
+cd Crimson-master
+cp Desktop\ Fonts/OTF/*.otf ../../$NAME
+cp Desktop\ Fonts/TTF/*.ttf ../../$NAME
+cp README.md ../../$NAME/fontlog.txt
+cp Specimen/crimson-L-with-caron-specimen.pdf ../../$NAME/$TYPE.pdf
 cd ..
 cd ..
 cp README.md $NAME/README

@@ -2,7 +2,7 @@
 set -e
 TEXLIVE=/usr/local/texlive/2014
 FOUNDRY=public
-TYPE=arvo
+TYPE=crimsontext
 NAME=$FOUNDRY-$TYPE
 
 # Check if package is available and extract package archive
@@ -36,25 +36,31 @@ fi
 # Install files in current TeX Live installation
 if [ `ls|grep 'ttf$'|wc -l` -ne 0 -a `ls|grep 'otf$'|wc -l` -eq 0 ]
 then
+    echo Installing in $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE
     if [ ! -d $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE ]
     then
         sudo mkdir -p $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE
     else
-        echo WANRING: Replacing following files
+        echo WANRING: Removing following files
         ls -ltr $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE
         sudo rm -f $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE/*
     fi
     sudo /bin/cp -f *.ttf $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE
+    echo INFO: Installed following files
+    ls -ltr $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE
 else
+    echo Installing in $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE
     if [ ! -d $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE ]
     then
         sudo mkdir -p $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE
     else
-        echo WANRING: Replacing following files
+        echo WANRING: Removing following files
         ls -ltr $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE
         sudo rm -f $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE/*
     fi
     sudo /bin/cp -f *.otf $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE
+    echo INFO: Installed following files
+    ls -ltr $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE
 fi
 sudo $TEXLIVE/bin/x86_64-linux/texhash
 

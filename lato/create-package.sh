@@ -1,10 +1,10 @@
 # Set variables
 set -e
-FOUNDRY=gnome
-TYPE=cantarell
-NAME=$FOUNDRY-$TYPE
-ARCHIVE=master.zip
-FONTS=https://github.com/GNOME/cantarell-fonts/archive/$ARCHIVE
+NAME=lato
+ARCHIVE=Lato2OFL.zip
+DOC=563x647xScreen-Shot-2014-02-27-at-11.42.52.png.pagespeed.ic.bcReRM9EGv.png
+FONTS=http://www.latofonts.com/download/$ARCHIVE
+SAMPLE=http://www.latofonts.com/wp-content/uploads/2014/02/$DOC
 
 # Create new download and package directories
 if [ -e download ]
@@ -25,13 +25,16 @@ then
 	wget $FONTS
 fi
 unzip $ARCHIVE
-cd cantarell-fonts-master
-cp otf/*.otf ../../$NAME
-cp NEWS ../../$NAME/fontlog.txt
-cp specimen/cantarell.pdf ../../$NAME/$TYPE.pdf
+rm -rf __MACOSX
+cd Lato2OFL
+cp *.ttf ../../$NAME
+cp README.txt ../../$NAME/fontlog.txt
 cd ..
+wget $SAMPLE
+convert $DOC -page a4 ../$NAME/$TYPE.pdf
 cd ..
 cp README.md $NAME/README
+chmod a-x $NAME/*
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar

@@ -26,12 +26,20 @@ then
     if [ ! -d $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE ]
     then
         sudo mkdir -p $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE
+    else
+        echo WANRING: Replacing following files
+        ls -ltr $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE
+        sudo rm -f $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE/*
     fi
     sudo /bin/cp -f *.ttf $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE
 else
     if [ ! -d $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE ]
     then
         sudo mkdir -p $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE
+    else
+        echo WANRING: Replacing following files
+        ls -ltr $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE
+        sudo rm -f $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE/*
     fi
     sudo /bin/cp -f *.otf $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE
 fi

@@ -35,7 +35,7 @@ cp `basename $ARCHIVE .zip`/FONTLOG.txt ../$NAME/fontlog.txt
 cp `basename $ARCHIVE .zip`/*.ttf ../$NAME
 wget $SAMPLE
 mv $DOC_FULL $DOC
-pdfjoin $DOC `basename $ARCHIVE .zip`/documentation/CharisSIL-features.pdf -o ../$NAME/$NAME.pdf
+pdfjoin $DOC `basename $ARCHIVE .zip`/documentation/CharisSIL-features.pdf -o ../$NAME/$TYPE.pdf
 cd ..
 cp README.md $NAME/README
 

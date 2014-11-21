@@ -1,10 +1,16 @@
 # Set variables
 set -e
-FOUNDRY=gnome
-TYPE=cantarell
+FOUNDRY=ascendercorporation
+TYPE=droid
 NAME=$FOUNDRY-$TYPE
 ARCHIVE=master.zip
-FONTS=https://github.com/GNOME/cantarell-fonts/archive/$ARCHIVE
+DOC1=Droid-Sans-Pro.pdf
+DOC2=Droid-Serif-Pro.pdf
+FONTS=https://github.com/android/platform_frameworks_base/archive/$ARCHIVE
+SAMPLE1=http://www.droidfonts.com/local/pdf/$DOC11
+SAMPLE2=http://www.droidfonts.com/local/pdf/$DOC12
+#DOC21=Roboto_Specimen_Book_20131031.pdf
+#SAMPLE21=https://developer.android.com/downloads/design/$DOC21
 
 # Create new download and package directories
 if [ -e download ]
@@ -25,10 +31,10 @@ then
 	wget $FONTS
 fi
 unzip $ARCHIVE
-cd cantarell-fonts-master
-cp otf/*.otf ../../$NAME
+exit
+cd platform_frameworks_base-master
+cp data/fonts/Roboto*ttf ../../$NAME
 cp NEWS ../../$NAME/fontlog.txt
-cp specimen/cantarell.pdf ../../$NAME/$TYPE.pdf
 cd ..
 cd ..
 cp README.md $NAME/README

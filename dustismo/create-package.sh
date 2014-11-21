@@ -1,10 +1,8 @@
 # Set variables
 set -e
-FOUNDRY=gnome
-TYPE=cantarell
-NAME=$FOUNDRY-$TYPE
+NAME=dustismo
 ARCHIVE=master.zip
-FONTS=https://github.com/GNOME/cantarell-fonts/archive/$ARCHIVE
+FONTS=https://github.com/dustismo/dustismo.com/archive/$ARCHIVE
 
 # Create new download and package directories
 if [ -e download ]
@@ -25,10 +23,9 @@ then
 	wget $FONTS
 fi
 unzip $ARCHIVE
-cd cantarell-fonts-master
-cp otf/*.otf ../../$NAME
-cp NEWS ../../$NAME/fontlog.txt
-cp specimen/cantarell.pdf ../../$NAME/$TYPE.pdf
+cd dustismo.com-master
+cp fonts/*.ttf ../../$NAME
+cp fonts/dustismo/*.ttf ../../$NAME
 cd ..
 cd ..
 cp README.md $NAME/README

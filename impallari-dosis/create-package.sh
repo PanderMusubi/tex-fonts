@@ -1,10 +1,14 @@
 # Set variables
 set -e
-FOUNDRY=gnome
-TYPE=cantarell
+FOUNDRY=impallari
+TYPE=dosis
 NAME=$FOUNDRY-$TYPE
-ARCHIVE=master.zip
-FONTS=https://github.com/GNOME/cantarell-fonts/archive/$ARCHIVE
+ARCHIVE=dosis-v1.7.zip
+DOC1=terminaldosis-weights-1.6.png
+DOC2=terminaldosis-preview.png
+FONTS=http://www.impallari.com/media/releases/$ARCHIVE
+SAMPLE1=http://www.impallari.com/media/fonts/terminaldosis/$DOC1
+SAMPLE2=http://www.impallari.com/media/fonts/terminaldosis/$DOC2
 
 # Create new download and package directories
 if [ -e download ]
@@ -25,13 +29,17 @@ then
 	wget $FONTS
 fi
 unzip $ARCHIVE
-cd cantarell-fonts-master
-cp otf/*.otf ../../$NAME
-cp NEWS ../../$NAME/fontlog.txt
-cp specimen/cantarell.pdf ../../$NAME/$TYPE.pdf
+rm -rf __MACOSX
+cd Dosis\ v1.7
+#cp *.ttf ../../$NAME
+cp src/OT/*.otf ../../$NAME
+cp FONTLOG.txt ../../$NAME/fontlog.txt
 cd ..
+wget $SAMPLE1 $SAMPLE2
+convert $DOC1 $DOC2 -page a4 ../$NAME/$TYPE.pdf
 cd ..
 cp README.md $NAME/README
+chmod a-x $NAME/*
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar

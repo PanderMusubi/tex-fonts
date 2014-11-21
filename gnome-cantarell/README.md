@@ -25,4 +25,4 @@ Suggested CTAN directory: /fonts
 
 License type: Open Font License (OFL)
 
-CTAN Topics: font font-body font-cyrillic font-multilingual font-ttf font-sans font-proportional ttf
+CTAN Topics: font font-body font-cyrillic font-multilingual font-ttf font-sans font-proportional
