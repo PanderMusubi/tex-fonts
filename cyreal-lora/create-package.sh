@@ -1,6 +1,8 @@
 # Set variables
 set -e
-NAME=cyreal-lora
+FOUNDRY=cyreal
+TYPE=lora
+NAME=$FOUNDRY-$TYPE
 ARCHIVE=master.zip
 DOC=lora-promo.png
 FONTS=https://github.com/cyrealtype/Lora/archive/$ARCHIVE

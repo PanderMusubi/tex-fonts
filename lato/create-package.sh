@@ -31,7 +31,7 @@ cp *.ttf ../../$NAME
 cp README.txt ../../$NAME/fontlog.txt
 cd ..
 wget $SAMPLE
-convert $DOC -page a4 ../$NAME/$TYPE.pdf
+convert $DOC -page a4 ../$NAME/$NAME.pdf
 cd ..
 cp README.md $NAME/README
 chmod a-x $NAME/*
