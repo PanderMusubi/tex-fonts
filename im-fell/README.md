@@ -1,9 +1,9 @@
-fell
-====
+im-fell
+=======
 
-LaTeX package for Fell typefaces
+LaTeX package for IM Fell typefaces
 
-Name of contribution: fell
+Name of contribution: im-fell
 
 Version number: 001.001
 
