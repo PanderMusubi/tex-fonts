@@ -60,4 +60,9 @@ sudo $TEXLIVE/bin/x86_64-linux/texhash
 
 # Remove package directory
 cd ..
-rm -rf $NAME
+if [ -e $TYPE.tar.gz ]
+then
+    rm -rf $TYPE
+else
+    rm -rf $NAME
+fi

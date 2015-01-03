@@ -1,8 +1,8 @@
 # Set variables
 set -e
 TEXLIVE=/usr/local/texlive/2014
-FOUNDRY=gnome
-TYPE=cantarell
+FOUNDRY=sil
+TYPE=galatia
 NAME=$FOUNDRY-$TYPE
 
 # Check if package is available and extract package archive
