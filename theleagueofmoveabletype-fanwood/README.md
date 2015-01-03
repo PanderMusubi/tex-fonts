@@ -13,7 +13,7 @@ Author: Barry Schwartz
 
 Foundry: The League Of Moveable Type
 
-Website: htts://theleagueofmoveabletype.com/fanwood
+Website: http://theleagueofmoveabletype.com/fanwood
 
 Contributor name: Pander
 
