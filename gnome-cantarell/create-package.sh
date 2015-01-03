@@ -26,12 +26,12 @@ then
 fi
 unzip $ARCHIVE
 cd cantarell-fonts-master
-cp otf/*.otf ../../$NAME
-cp NEWS ../../$NAME/fontlog.txt
-cp specimen/cantarell.pdf ../../$NAME/$TYPE.pdf
+cp --preserve=timestamps otf/*.otf ../../$NAME
+cp --preserve=timestamps NEWS ../../$NAME/fontlog.txt
+cp --preserve=timestamps specimen/cantarell.pdf ../../$NAME/$TYPE.pdf
 cd ..
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar

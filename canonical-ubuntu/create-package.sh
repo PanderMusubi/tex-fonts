@@ -45,13 +45,13 @@ then
 fi
 unzip $ARCHIVE
 cd ubuntu-font-family-0.80
-cp *ttf ../../$NAME
-cp FONTLOG.txt ../../$NAME/fontlog.txt
+cp --preserve=timestamps *ttf ../../$NAME
+cp --preserve=timestamps FONTLOG.txt ../../$NAME/fontlog.txt
 cd ..
 wget $SAMPLE1 $SAMPLE2 $SAMPLE3 $SAMPLE4 $SAMPLE5 $SAMPLE5 $SAMPLE6 $SAMPLE7 $SAMPLE8 $SAMPLE9
 convert $DOC1 $DOC2 $DOC3 $DOC4 $DOC5 $DOC6 $DOC7 $DOC8 $DOC9 -page a4 ../$NAME/$TYPE.pdf
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar

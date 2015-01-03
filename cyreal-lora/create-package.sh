@@ -30,14 +30,14 @@ unzip $ARCHIVE
 cd Lora-master/src/OTF
 for i in *.otf
 do
-    cp $i ../../../../$NAME/`basename $i -OTF.otf`.otf
+    cp --preserve=timestamps $i ../../../../$NAME/`basename $i -OTF.otf`.otf
 done
 cd ../../..
-cp Lora-master/FONTLOG.txt ../$NAME/fontlog.txt
+cp --preserve=timestamps Lora-master/FONTLOG.txt ../$NAME/fontlog.txt
 wget $SAMPLE
 convert $DOC -page a4 ../$NAME/$TYPE.pdf
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar

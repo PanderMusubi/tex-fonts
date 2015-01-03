@@ -31,13 +31,13 @@ then
 	mv $ARCHIVE_FULL $ARCHIVE
 fi
 unzip $ARCHIVE
-cp `basename $ARCHIVE .zip`/FONTLOG.txt ../$NAME/fontlog.txt
-cp `basename $ARCHIVE .zip`/*.ttf ../$NAME
+cp --preserve=timestamps `basename $ARCHIVE .zip`/FONTLOG.txt ../$NAME/fontlog.txt
+cp --preserve=timestamps `basename $ARCHIVE .zip`/*.ttf ../$NAME
 wget $SAMPLE
 mv $DOC_FULL $DOC
 pdfjoin $DOC `basename $ARCHIVE .zip`/documentation/DoulosSIL-features.pdf -o ../$NAME/$TYPE.pdf
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar

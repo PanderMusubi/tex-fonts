@@ -24,11 +24,11 @@ then
 fi
 unzip $ARCHIVE
 cd dustismo.com-master
-cp fonts/*.ttf ../../$NAME
-cp fonts/dustismo/*.ttf ../../$NAME
+cp --preserve=timestamps fonts/*.ttf ../../$NAME
+cp --preserve=timestamps fonts/dustismo/*.ttf ../../$NAME
 cd ..
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar

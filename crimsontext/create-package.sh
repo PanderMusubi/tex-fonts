@@ -24,13 +24,13 @@ then
 fi
 unzip $ARCHIVE
 cd Crimson-master
-cp Desktop\ Fonts/OTF/*.otf ../../$NAME
-cp Desktop\ Fonts/TTF/*.ttf ../../$NAME
-cp README.md ../../$NAME/fontlog.txt
-cp Specimen/crimson-L-with-caron-specimen.pdf ../../$NAME/$TYPE.pdf
+cp --preserve=timestamps Desktop\ Fonts/OTF/*.otf ../../$NAME
+cp --preserve=timestamps Desktop\ Fonts/TTF/*.ttf ../../$NAME
+cp --preserve=timestamps README.md ../../$NAME/fontlog.txt
+cp --preserve=timestamps Specimen/crimson-L-with-caron-specimen.pdf ../../$NAME/$TYPE.pdf
 cd ..
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar

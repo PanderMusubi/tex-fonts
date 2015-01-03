@@ -27,13 +27,13 @@ fi
 unzip $ARCHIVE
 rm -rf __MACOSX
 cd Lato2OFL
-cp *.ttf ../../$NAME
-cp README.txt ../../$NAME/fontlog.txt
+cp --preserve=timestamps *.ttf ../../$NAME
+cp --preserve=timestamps README.txt ../../$NAME/fontlog.txt
 cd ..
 wget $SAMPLE
 convert $DOC -page a4 ../$NAME/$NAME.pdf
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 chmod a-x $NAME/*
 
 # Create archive for uploading to CTAN

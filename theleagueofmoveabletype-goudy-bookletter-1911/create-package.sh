@@ -26,11 +26,11 @@ then
 fi
 unzip $ARCHIVE
 cd goudy-bookletter-1911-master
-cp *.otf ../../$NAME
+cp --preserve=timestamps *.otf ../../$NAME
 convert images/*.jpeg -page a4 ../../$NAME/$TYPE.pdf
 cd ..
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar

@@ -45,7 +45,7 @@ then
         ls -ltr $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE
         sudo rm -f $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE/*
     fi
-    sudo /bin/cp -f *.ttf $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE
+    sudo /bin/cp --preserve=timestamps -f *.ttf $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE
     echo INFO: Installed following files
     ls -ltr $TEXLIVE/texmf-dist/fonts/truetype/$FOUNDRY/$TYPE
 else
@@ -58,7 +58,7 @@ else
         ls -ltr $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE
         sudo rm -f $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE/*
     fi
-    sudo /bin/cp -f *.otf $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE
+    sudo /bin/cp --preserve=timestamps -f *.otf $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE
     echo INFO: Installed following files
     ls -ltr $TEXLIVE/texmf-dist/fonts/opentype/$FOUNDRY/$TYPE
 fi

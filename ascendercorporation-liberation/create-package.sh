@@ -32,13 +32,13 @@ then
 fi
 tar xf $ARCHIVE
 cd liberation-fonts-ttf-2.00.1
-cp *.ttf ../../$NAME
-cp ChangeLog ../../$NAME/fontlog.txt
+cp --preserve=timestamps *.ttf ../../$NAME
+cp --preserve=timestamps ChangeLog ../../$NAME/fontlog.txt
 cd ..
 wget $SAMPLE1 $SAMPLE2 $SAMPLE3
 convert $DOC1 $DOC2 $DOC3 -page a4 ../$NAME/$TYPE.pdf
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 chmod a-x $NAME/*
 
 # Create archive for uploading to CTAN

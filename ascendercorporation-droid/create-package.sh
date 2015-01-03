@@ -33,11 +33,11 @@ fi
 unzip $ARCHIVE
 exit
 cd platform_frameworks_base-master
-cp data/fonts/Roboto*ttf ../../$NAME
-cp NEWS ../../$NAME/fontlog.txt
+cp --preserve=timestamps data/fonts/Roboto*ttf ../../$NAME
+cp --preserve=timestamps NEWS ../../$NAME/fontlog.txt
 cd ..
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar

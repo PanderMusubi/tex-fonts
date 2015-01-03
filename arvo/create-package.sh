@@ -35,13 +35,13 @@ then
 fi
 unzip $ARCHIVE
 cd Arvo-master
-cp *.ttf ../../$NAME
-cp Recent_changes.txt ../../$NAME/fontlog.txt
+cp --preserve=timestamps *.ttf ../../$NAME
+cp --preserve=timestamps Recent_changes.txt ../../$NAME/fontlog.txt
 cd ..
 wget $SAMPLE1 $SAMPLE2 $SAMPLE3 $SAMPLE4 $SAMPLE5
 convert $DOC1 $DOC2 $DOC3 $DOC4 $DOC5 -page a4 ../$NAME/$NAME.pdf
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar

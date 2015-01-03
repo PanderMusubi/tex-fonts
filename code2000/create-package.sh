@@ -26,12 +26,12 @@ then
 	wget $FONTS
 fi
 unzip $ARCHIVE
-cp CODE2000.TTF ../$NAME/CODE2000.ttf
+cp --preserve=timestamps CODE2000.TTF ../$NAME/CODE2000.ttf
 wget $SAMPLE
 unzip $DOC
 convert SSEE.GIF -page a4 ../$NAME/$NAME.pdf
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar

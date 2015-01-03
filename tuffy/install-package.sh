@@ -23,7 +23,7 @@ if [ ! -d $TEXLIVE/texmf-dist/fonts/opentype/public/$NAME ]
 then
     sudo mkdir $TEXLIVE/texmf-dist/fonts/opentype/public/$NAME
 fi
-sudo /bin/cp -f *.otf $TEXLIVE/texmf-dist/fonts/opentype/public/$NAME
+sudo /bin/cp --preserve=timestamps -f *.otf $TEXLIVE/texmf-dist/fonts/opentype/public/$NAME
 sudo $TEXLIVE/bin/x86_64-linux/texhash
 cd ..
 

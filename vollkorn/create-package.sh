@@ -38,12 +38,12 @@ then
 	wget $FONTS
 fi
 unzip $ARCHIVE
-cp Fontlog.txt ../$NAME/fontlog.txt
-cp PS-OTF/*.otf ../$NAME
+cp --preserve=timestamps Fontlog.txt ../$NAME/fontlog.txt
+cp --preserve=timestamps PS-OTF/*.otf ../$NAME
 wget $SAMPLE1 $SAMPLE2 $SAMPLE3 $SAMPLE4 $SAMPLE5 $SAMPLE6 $SAMPLE7
 convert $DOC1 $DOC2 $DOC3 $DOC4 $DOC5 $DOC6 $DOC7 -page a4 ../$NAME/$NAME.pdf
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar

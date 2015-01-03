@@ -31,14 +31,14 @@ fi
 unzip $ARCHIVE
 rm -rf __MACOSX
 cd Dosis\ v1.7
-#cp *.ttf ../../$NAME
-cp src/OT/*.otf ../../$NAME
-cp FONTLOG.txt ../../$NAME/fontlog.txt
+#cp --preserve=timestamps *.ttf ../../$NAME
+cp --preserve=timestamps src/OT/*.otf ../../$NAME
+cp --preserve=timestamps FONTLOG.txt ../../$NAME/fontlog.txt
 cd ..
 wget $SAMPLE1 $SAMPLE2
 convert $DOC1 $DOC2 -page a4 ../$NAME/$TYPE.pdf
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 chmod a-x $NAME/*
 
 # Create archive for uploading to CTAN

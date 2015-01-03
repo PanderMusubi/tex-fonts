@@ -30,12 +30,12 @@ then
 	mv $ARCHIVE_FULL $ARCHIVE
 fi
 unzip $ARCHIVE
-cp `basename $ARCHIVE .zip`/FONTLOG.txt ../$NAME/fontlog.txt
-cp `basename $ARCHIVE .zip`/*.ttf ../$NAME
+cp --preserve=timestamps `basename $ARCHIVE .zip`/FONTLOG.txt ../$NAME/fontlog.txt
+cp --preserve=timestamps `basename $ARCHIVE .zip`/*.ttf ../$NAME
 wget $SAMPLE
 convert $DOC -page a4 ../$NAME/$NAME.pdf
 cd ..
-cp README.md $NAME/README
+cp --preserve=timestamps README.md $NAME/README
 
 # Create archive for uploading to CTAN
 rm -f $NAME.tar.gz $NAME.tar
