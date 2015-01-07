@@ -14,7 +14,6 @@ DOC7=gallery-one.png
 DOC8=gallery-poster.png
 DOC9=gallery-saudi.png
 FONTS=http://font.ubuntu.com/download/$ARCHIVE
-#TODO http://font.ubuntu.com/download/ubuntu-font-family-sources_0.80.orig.tar.gz
 SAMPLE1=http://font.ubuntu.com/assets/img/$DOC1
 SAMPLE2=http://font.ubuntu.com/assets/img/$DOC2
 SAMPLE3=http://font.ubuntu.com/assets/img/$DOC3
